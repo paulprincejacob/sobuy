@@ -96,15 +96,7 @@ class _CredentialscreenState extends State<Credentialscreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children:  [
-             const Text('Login',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w600
-              ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
+
               Textfields(mobilenumber: 'Enter Mobile Number',osbc: false,keyboardtype: TextInputType.phone,),
               const SizedBox(
                 height: 30,
@@ -131,7 +123,7 @@ class _CredentialscreenState extends State<Credentialscreen> {
               const SizedBox(height: 15,),
              InkWell(
                onTap: (){
-                Navigator.pushNamed(context, "signups");
+                Navigator.pushReplacementNamed(context, "signups");
                },
                  child: const Loginbutton(btnTxt: "Don't Have an Account ?",colorBtn: sbgreycolor,)),
 
