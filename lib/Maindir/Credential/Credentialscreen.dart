@@ -68,7 +68,7 @@ class _CredentialscreenState extends State<Credentialscreen> {
     );
  }
 
-  _bottomContainer(BuildContext context,double screenheight){
+  _bottomContainer(BuildContext ctx,double screenheight){
     return Container(
       decoration:const BoxDecoration(
         color: Colors.white
@@ -81,7 +81,7 @@ class _CredentialscreenState extends State<Credentialscreen> {
               delegate: SliverChildBuilderDelegate((context,index){
             return Padding(
               padding:const EdgeInsets.symmetric(horizontal: 10),
-              child: _containerPhase(context,index));
+              child: _containerPhase(ctx,index));
           },childCount:2)
         )],
       ),
@@ -107,7 +107,7 @@ class _CredentialscreenState extends State<Credentialscreen> {
               ),
               Textfields(mobilenumber: 'Enter Mobile Number',osbc: false,keyboardtype: TextInputType.phone,),
               const SizedBox(
-                height: 20,
+                height: 30,
               ),
 
             ],
@@ -118,8 +118,8 @@ class _CredentialscreenState extends State<Credentialscreen> {
           child:Column(
             children:  [
               InkWell(
-                onTap: ()  {
-                  ScaffoldMessenger.of(context).showSnackBar(
+                onTap: ()  async {
+                 ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(
                           content: Text("Login Success"),
                       duration: Duration(microseconds: 10000),
@@ -129,7 +129,11 @@ class _CredentialscreenState extends State<Credentialscreen> {
               const SizedBox(height: 15,),
             const Center(child: Text("or"),),
               const SizedBox(height: 15,),
-             const Loginbutton(btnTxt: "Don't Have an Account ?",colorBtn: sbgreycolor,),
+             InkWell(
+               onTap: (){
+                Navigator.pushNamed(context, "signups");
+               },
+                 child: const Loginbutton(btnTxt: "Don't Have an Account ?",colorBtn: sbgreycolor,)),
 
              const SizedBox(height: 15,),
               const Text('Powered by ADPA',
