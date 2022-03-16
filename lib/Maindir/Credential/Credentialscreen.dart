@@ -109,10 +109,7 @@ class _CredentialscreenState extends State<Credentialscreen> {
               const SizedBox(
                 height: 20,
               ),
-              Textfields(mobilenumber: 'Enter your password',osbc: true,keyboardtype: TextInputType.text,),
-              const SizedBox(
-                height: 25,
-              ),
+
             ],
           ),
         );
