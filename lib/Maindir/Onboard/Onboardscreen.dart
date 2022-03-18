@@ -16,11 +16,30 @@ class _OnboardscreenState extends State<Onboardscreen> {
     return Scaffold(
       body: SafeArea(
         child: IntroductionScreen(
+          pages: [
+            PageViewModel(
+              title: 'Create your profile',
+              body: 'Help to get BG-Passport'
+            ),
+
+            PageViewModel(
+                title: 'Add Your Product',
+                body: 'Help to get BG-Passport'
+            ),
+
+            PageViewModel(
+                title: 'Sell Your Product',
+                body: 'Maintain the inventory'
+            ),
+          ],
+
           done: const Text('Start',style: TextStyle(fontWeight: FontWeight.w600),),
           onDone: (){
             Navigator.pushReplacementNamed(context, 'credential');
           },
-
+          showSkipButton: true,
+          skip: const Text('Skip'),
+          next: const Icon(Icons.arrow_forward_ios),
         ),
       ),
     );
