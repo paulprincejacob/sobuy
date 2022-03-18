@@ -7,6 +7,7 @@ import 'package:sobuy/Maindir/Credential/Credentialscreen.dart';
 import 'package:sobuy/Maindir/Credential/signupscreen.dart';
 import 'package:sobuy/Maindir/Homepage/Homescreen.dart';
 import 'package:sobuy/Maindir/Logo/logoScreen.dart';
+import 'package:sobuy/Maindir/Onboard/Onboardscreen.dart';
 
 class Routegenerator{
 
@@ -18,6 +19,8 @@ class Routegenerator{
     switch(routeSettings.name){
       case 'logoscreen':
         return MaterialPageRoute(builder: (_)=>const Logoscreen(),settings:routeSettings );
+      case 'onboardscreen':
+        return MaterialPageRoute(builder: (_)=>const Onboardscreen(),settings: routeSettings);
       case 'homescreen':
         return MaterialPageRoute(builder: (_)=>const Homescreen(),settings:routeSettings );
       case 'credential':
